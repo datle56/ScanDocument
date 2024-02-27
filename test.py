@@ -8,5 +8,6 @@ for mask_name in masks:
     mask=os.path.join(mask_path, mask_name)
     mask_img=cv2.imread(mask)
     extract_document=extract(original_img,mask_img)
-    plt.imshow(extract_document)
+    paperEdge_img=run_PaperEdge("/content/G_w_checkpoint_13820.pt",extract_document)
+    plt.imshow(paperEdge_img)
     plt.show()
