@@ -38,7 +38,7 @@ def black_mask(results):
             # Show the masked part of the image
             cv2.imwrite(name,result_image)
 def segmentation_doc(image):
-    model = YOLO('Model\Seg65ep.pt')
+    model = YOLO('Model/Seg65ep.pt')
     runs_folder = "runs"
     folder="mask"
     # Xóa thư mục runs
