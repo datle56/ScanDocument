@@ -60,10 +60,10 @@ def extract(ori_img, img, image_size=384, BUFFER=100):
     ori_img = rotate(ori_img, angle, (0, 0, 0))
     #get size of image
     size = img.shape
-    top_pad = size[1]      # Số pixel padding ở phía trên
-    bottom_pad = size[1]   # Số pixel padding ở phía dưới
-    left_pad = size[0]   # Số pixel padding ở phía trái
-    right_pad = size[0]   # Số pixel padding ở phía phải
+    top_pad = 10     # Số pixel padding ở phía trên
+    bottom_pad = 10   # Số pixel padding ở phía dưới
+    left_pad = 10   # Số pixel padding ở phía trái
+    right_pad = 10   # Số pixel padding ở phía phải
 
     # Tạo hình ảnh mới với kích thước lớn hơn, bằng cách thêm pixel màu đen (0) vào xung quanh
     height, width, channels = img.shape
@@ -150,28 +150,28 @@ def extract(ori_img, img, image_size=384, BUFFER=100):
         pass
 
 # Define the amount to increase the rectangle size
-    (tl, tr, br, bl) = corners
-    widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
-    widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
-    maxWidth = max(int(widthA), int(widthB))
-    heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
-    heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
-    maxHeight = max(int(heightA), int(heightB))
+    # (tl, tr, br, bl) = corners
+    # widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
+    # widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
+    # maxWidth = max(int(widthA), int(widthB))
+    # heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
+    # heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
+    # maxHeight = max(int(heightA), int(heightB))
 
-    # Increase the x-coordinate of the top-right and bottom-right points
-    corners[1][0] += maxWidth/30
-    corners[2][0] += maxWidth/30
+    # # Increase the x-coordinate of the top-right and bottom-right points
+    # corners[1][0] += maxWidth/30
+    # corners[2][0] += maxWidth/30
 
-    # Decrease the x-coordinate of the top-left and bottom-left points
-    corners[0][0] -= maxWidth/30
-    corners[3][0] -= maxWidth/30
-    # Increase the y-coordinate of the bottom-right and bottom-left points
-    corners[2][1] += maxHeight/30
-    corners[3][1] += maxHeight/30
+    # # Decrease the x-coordinate of the top-left and bottom-left points
+    # corners[0][0] -= maxWidth/30
+    # corners[3][0] -= maxWidth/30
+    # # Increase the y-coordinate of the bottom-right and bottom-left points
+    # corners[2][1] += maxHeight/30
+    # corners[3][1] += maxHeight/30
 
-    # Decrease the y-coordinate of the top-left and top-right points
-    corners[0][1] -= maxHeight/30
-    corners[1][1] -= maxHeight/30
+    # # Decrease the y-coordinate of the top-left and top-right points
+    # corners[0][1] -= maxHeight/30
+    # corners[1][1] -= maxHeight/30
 
     # print(corners)
 
