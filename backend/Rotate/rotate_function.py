@@ -67,7 +67,7 @@ def rotate(img):
     run_text_detector(
     img=img,
     use_gpu=False,
-    det_algorithm="DB",
+    # det_algorithm="DB",
     det_model_dir="Rotate/ch_PP-OCRv4_det_infer/",
     draw_img_save_dir='Rotate/output/'
 )
@@ -76,7 +76,7 @@ def rotate(img):
         run_text_detector(
         img=img,
         use_gpu=False,
-        det_algorithm="DB",
+        # det_algorithm="DB",
         det_model_dir="Rotate/ch_PP-OCRv4_det_infer/",
         draw_img_save_dir='Rotate/output/'
     )
