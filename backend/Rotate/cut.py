@@ -25,6 +25,9 @@ def crop(image):
             cropped_rect = cropped[:,:2*h]
         else:
             cropped_rect = cropped[:2*w, :]
-        # Lưu hình ảnh đã cắt
-        cv2.imwrite(f'Rotate/output/cut/cropped_{i}.jpg', cropped_rect)
+        try:
+          # Lưu hình ảnh đã cắt
+          cv2.imwrite(f'Rotate/output/cut/cropped_{i}.jpg', cropped_rect)
+        except:
+          pass
 # crop(cv2.imread("2_1.1.jpg"))
